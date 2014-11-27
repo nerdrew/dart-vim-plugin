@@ -28,3 +28,18 @@ setlocal isfname+=:
 setlocal iskeyword+=$
 
 let b:undo_ftplugin = 'setl et< fo< sw< sts< com< cms< inex< isf<'
+
+if !exists("g:tagbar_type_dart")
+  let g:tagbar_type_dart = {
+          \ 'ctagsbin' : 'pub',
+          \ 'ctagsargs' : ['global', 'run', 'dart_ctags:tags', '--skip-sort', '--line-numbers'],
+          \ 'ctagstype' : 'dart',
+          \ 'kinds'     : [
+              \ 'c:classes',
+              \ 'f:function',
+              \ 'M:static method',
+              \ 'm:method',
+              \ 'i:field'
+          \ ]
+      \ }
+endif
